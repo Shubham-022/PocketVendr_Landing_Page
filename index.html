@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PocketVendr - India's First Regional Wholesaling Platform</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --tw-pv-navy: #08486B;
+            --tw-pv-orange: #FB7319;
+            --tw-pv-cream: #FFFCFA;
+            --tw-pv-white: #FFFFFF;
+            --tw-pv-light-grey: #F6F7F8;
+            --tw-pv-dark-blue: #1c5e88;
+            --tw-pv-dark-gray: #2D3748;
+            --tw-pv-medium-gray: #4A5568;
+        }
+
+        .bg-pv-navy { background-color: var(--tw-pv-navy); }
+        .text-pv-navy { color: var(--tw-pv-navy); }
+        .border-pv-navy { border-color: var(--tw-pv-navy); }
+
+        .bg-pv-orange { background-color: var(--tw-pv-orange); }
+        .text-pv-orange { color: var(--tw-pv-orange); }
+        .border-pv-orange { border-color: var(--tw-pv-orange); }
+
+        .bg-pv-cream { background-color: var(--tw-pv-cream); }
+        .text-pv-cream { color: var(--tw-pv-cream); }
+
+        .bg-pv-white { background-color: var(--tw-pv-white); }
+        .text-pv-white { color: var(--tw-pv-white); }
+
+        .bg-pv-light-grey { background-color: var(--tw-pv-light-grey); }
+        .text-pv-light-grey { color: var(--tw-pv-light-grey); }
+
+        .bg-pv-dark-blue { background-color: var(--tw-pv-dark-blue); }
+        .text-pv-dark-blue { color: var(--tw-pv-dark-blue); }
+        .border-pv-dark-blue { border-color: var(--tw-pv-dark-blue); }
+
+        .bg-pv-dark-gray { background-color: var(--tw-pv-dark-gray); }
+        .border-pv-medium-gray { border-color: var(--tw-pv-medium-gray); }
+
+        /* Added Transitions for Smooth Animations */
+        a, button, .feature-card, input, textarea, .swiper-slide {
+            transition: all 0.2s ease-in-out;
+        }
+
+        /* Navigation Hover Effects */
+        nav a:hover {
+            color: var(--tw-pv-orange);
+        }
+        nav a.bg-pv-orange:hover {
+            background-color: #e06415; /* Slightly darker orange */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hero Section Button Hover Effect */
+        #hero a:hover {
+            background-color: #e06415;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Features Section Card Hover Effect */
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--tw-pv-orange);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Testimonials Section */
+        .swiper-slide {
+            opacity: 0.8;
+            transform: scale(0.95);
+        }
+        .swiper-slide-active {
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Contact Form Button Hover Effect */
+        #contact button:hover {
+            background-color: #e06415;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Improve Contact Form Input Focus */
+        #contact input:focus,
+        #contact textarea:focus {
+            border-color: var(--tw-pv-orange);
+            box-shadow: 0 0 5px rgba(251, 115, 25, 0.5);
+            outline: none;
+        }
+    </style>
+    <link rel="icon" href="https://via.placeholder.com/32/FB7319/FFFFFF?text=PV" type="image/png" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body class="bg-pv-navy text-pv-cream transition-colors duration-500">
+
+    <nav class="bg-pv-navy shadow-xl sticky top-0 z-50 py-4 border-b border-pv-orange">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="cursor-pointer flex items-center">
+                <img src="darklogo.png" alt="PocketVendr Logo" class="h-[80px] w-auto object-contain" />
+                <span class="ml-2 text-xl font-bold text-pv-cream">PocketVendr</span>
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#features" class="text-pv-cream hover:text-pv-orange transition-colors duration-300 font-medium">Features</a>
+                <a href="#" id="openLoginModal" class="text-pv-cream hover:text-pv-orange transition-colors duration-300 font-medium">Login</a>
+                <a href="https://example.com/register" class="bg-pv-orange text-white px-5 py-2 rounded-lg hover:bg-opacity-80 transition-all duration-300 shadow-md hover:shadow-lg font-semibold">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero"
+             class="hero-section flex flex-col md:flex-row items-center justify-between px-6 py-20 relative overflow-hidden"
+             style="background-image: linear-gradient(to bottom right, #08486B, #1F2937);">
+
+        <div class="hero-text max-w-xl text-center md:text-left z-10">
+            <p class="text-pv-orange text-xl md:text-2xl font-bold mb-4 animate-pulse">India's First Regional Wholesaling Platform!</p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-pv-cream mb-4 leading-tight">
+                Streamline Your Business, <span class="text-pv-orange block sm:inline">Boost Your Sales</span>
+            </h1>
+            <p class="text-lg md:text-xl text-pv-light-grey mb-8">
+                PocketVendr offers all-in-one digital tools to manage sales, track inventory, and delight customers for wholesalers and retailers.
+            </p>
+            <a href="#contact" class="inline-block px-10 py-4 rounded-full font-bold text-pv-navy bg-pv-orange hover:bg-opacity-80 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                Get Started Today
+            </a>
+        </div>
+        <div class="hero-image mt-12 md:mt-0 max-w-lg md:max-w-xl z-10">
+            <img src="hero image" alt="PocketVendr Dashboard Preview" loading="lazy" class="w-full h-auto object-cover rounded-lg shadow-2xl border border-pv-orange" />
+        </div>
+    </section>
+
+    <section id="features" class="py-20 px-4 bg-pv-navy">
+        <h2 class="text-3xl lg:text-4xl font-bold text-center mb-6 text-pv-orange">Why PocketVendr?</h2>
+        <p class="text-center text-lg text-pv-light-grey mb-12 max-w-2xl mx-auto">
+            Experience the next level of retail management with intelligent tools designed to simplify your daily operations and accelerate growth.
+        </p>
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 text-center max-w-7xl mx-auto">
+            <div class="feature-card p-8 bg-pv-dark-gray rounded-xl shadow-lg border border-pv-medium-gray hover:border-pv-orange hover:transform hover:translate-y-[-5px] hover:shadow-xl">
+              <div class="text-pv-orange mb-4">
+          <svg class="w-10 h-10 sm:w-12 sm:h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+        </div> 
+              <h3 class="text-2xl font-semibold mb-3 text-pv-cream">Digital Storefront</h3>
+                <p class="text-pv-light-grey">Launch a professional and user-friendly online store seamlessly, expanding your reach effortlessly.</p>
+            </div>
+            <div class="feature-card p-8 bg-pv-dark-gray rounded-xl shadow-lg border border-pv-medium-gray hover:border-pv-orange hover:transform hover:translate-y-[-5px] hover:shadow-xl">
+              <div class="text-pv-orange mb-4">
+          <svg class="w-10 h-10 sm:w-12 sm:h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2h-3s-1.343-2-3-2S7.343 8 9 8h3zm0 0V5a2 2 0 100 4v3m-4 0v10a2 2 0 002 2h8a2 2 0 002-2V9m-8 0h.01M16 11V7a2 2 0 00-2-2h-3a2 2 0 00-2 2v4"></path></svg>
+        </div>
+              <h3 class="text-2xl font-semibold mb-3 text-pv-cream">Advanced Analytics</h3>
+                <p class="text-pv-light-grey">Gain actionable insights with our intuitive live dashboards to make informed business decisions.</p>
+            </div>
+            <div class="feature-card p-8 bg-pv-dark-gray rounded-xl shadow-lg border border-pv-medium-gray hover:border-pv-orange hover:transform hover:translate-y-[-5px] hover:shadow-xl">
+              <div class="text-pv-orange mb-4">
+          <svg class="w-10 h-10 sm:w-12 sm:h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+        </div> 
+              <h3 class="text-2xl font-semibold mb-3 text-pv-cream">POS Integration</h3>
+                <p class="text-pv-light-grey">Effortlessly synchronize your offline and online sales for unified inventory management.</p>
+            </div>
+            <div class="feature-card p-8 bg-pv-dark-gray rounded-xl shadow-lg border border-pv-medium-gray hover:border-pv-orange hover:transform hover:translate-y-[-5px] hover:shadow-xl">
+              <div class="text-pv-orange mb-4">
+          <svg class="w-10 h-10 sm:w-12 sm:h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h2a2 2 0 002-2V8a2 2 0 00-2-2h-2M5 20h2a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2zm10-10a2 2 0 012-2h2V3M5 10a2 2 0 00-2-2h2V3m0 7V7a2 2 0 012-2h2v2h-2m-2 4h4m-4 0v4m4-4V7a2 2 0 012-2h2v2h-2m-2 4h4m-4 0v4"></path></svg>
+        </div>
+              <h3 class="text-2xl font-semibold mb-3 text-pv-cream">CRM & Engagement</h3>
+                <p class="text-pv-light-grey">Build lasting customer relationships with automated and personalized communication tools.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-20 bg-pv-navy text-pv-cream">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12 text-pv-orange">What Our Clients Say</h2>
+
+            <div class="swiper-container" style="height: 440px; overflow: hidden;">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide bg-pv-dark-gray p-6 rounded-xl shadow-lg border border-pv-medium-gray">
+                        <p class="text-lg text-pv-light-grey mb-3">"PocketVendr has transformed our business operations. The platform is intuitive and has streamlined our sales process."</p>
+                        <div class="flex items-center">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client Photo" class="w-12 h-12 rounded-full mr-4" />
+                            <div>
+                                <p class="font-semibold text-pv-cream">Jane Doe</p>
+                                <p class="text-pv-light-grey text-sm">CEO, ABC Traders</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide bg-pv-dark-gray p-6 rounded-xl shadow-lg border border-pv-medium-gray">
+                        <p class="text-lg text-pv-light-grey mb-3">"The analytics feature provides real-time insights that help us make informed decisions. Highly recommend PocketVendr!"</p>
+                        <div class="flex items-center">
+                            <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Client Photo" class="w-12 h-12 rounded-full mr-4" />
+                            <div>
+                                <p class="font-semibold text-pv-cream">John Smith</p>
+                                <p class="text-pv-light-grey text-sm">Manager, XYZ Wholesalers</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide bg-pv-dark-gray p-6 rounded-xl shadow-lg border border-pv-medium-gray">
+                        <p class="text-lg text-pv-light-grey mb-3">"PocketVendr's customer support is outstanding. They've always been quick to assist us, making the platform a reliable partner."</p>
+                        <div class="flex items-center">
+                            <img src="https://randomuser.me/api/portraits/women/72.jpg" alt="Client Photo" class="w-12 h-12 rounded-full mr-4" />
+                            <div>
+                                <p class="font-semibold text-pv-cream">Priya Patel</p>
+                                <p class="text-pv-light-grey text-sm">Operations Head, DEF Supplies</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination mt-6"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            slidesPerView: 2,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+
+    <section id="contact" class="py-20 px-4 bg-pv-navy text-pv-cream">
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+            <div class="text-center md:text-left">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-pv-orange">Get in Touch</h2>
+                <p class="text-lg text-pv-light-grey mb-6">Have questions or want to learn more? Contact us today!</p>
+                <div class="space-y-4">
+                    <p>📞 +91 12345 67890</p>
+                    <p>📧 info@pocketvendr.com</p>
+                    <p>📍 Bhopal, MP, India</p>
+                </div>
+            </div>
+            <div class="bg-pv-dark-gray p-8 rounded-xl shadow-lg border border-pv-medium-gray">
+                <form action="#" method="POST" class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-pv-cream">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-pv-cream" required />
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-pv-cream">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-pv-cream" required />
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-pv-cream">Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-pv-cream" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full px-8 py-3 rounded-full font-bold text-white bg-pv-orange hover:bg-opacity-80 transition-all duration-300 shadow-md">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-pv-navy text-pv-light-grey py-8 px-4 border-t border-pv-orange">
+        <div class="max-w-7xl mx-auto text-center">
+            <p>&copy; 2024 PocketVendr. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
